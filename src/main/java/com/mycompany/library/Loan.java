@@ -14,6 +14,7 @@ public class Loan {
     private LocalDateTime data_devolvido;
     private LocalDateTime data_estimada;
     private int renews = 0;
+    private int fine = 50;
 
     public Loan(
             User user,
@@ -70,11 +71,8 @@ public class Loan {
     public void return_book(){
         this.data_devolvido = LocalDateTime.now();
         if(this.data_devolvido.isAfter(this.data_estimada))
-        {
-            System.out.println("Emprestimo atrasado, necessario cobrar 1000 de "
-                    + "multa");            
-        }
+            fine();
         this.book.retornar();
     }
-    
+    public void fine(){System.out.println("Emprestimo atrasado, necessario cobrar " + fine + " de multa");}
 }
