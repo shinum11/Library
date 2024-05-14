@@ -12,32 +12,39 @@ import java.util.Scanner;
  */
 public class LibraryApp {
 
-    public static void main(String[] args){
-        Scanner ler = new Scanner(System.in);
-        System.out.println("Escolha uma das opções:\n1 - Cadrastrar Usuário\n2 - Cadastrar Livro\n3 - Emprestar" +
-                "Livro\n4 - Desvolver Livro\nDigite sua escolha: ");
+    public static void main(String[] args) {
+        Boolean flag = true;
 
-        int escolha = 0;
+        while (flag) {
+            Scanner ler = new Scanner(System.in);
+            System.out.println("Escolha uma das opções:\n1 - Cadrastrar Usuário\n2 - Cadastrar Livro\n3 - Emprestar" +
+                    "Livro\n4 - Desvolver Livro\n0 - Sair Do Programa\nDigite sua escolha: ");
 
-        escolha = ler.nextInt();
+            int escolha = 0;
 
-        switch (escolha){
-            case 1:
-                System.out.println("1");
-                break;
-            case 2:
-                System.out.println("2");
-                break;
-            case 3:
-                System.out.println("3");
-                break;
-            case 4:
-                System.out.println("4");
-                break;
-            default:
-                System.out.println("Digite um valor válido!!");
+            escolha = ler.nextInt();
+
+            switch (escolha) {
+                case 0:
+                    flag = false;
+                    break;
+                case 1:
+                    System.out.println("1");
+                    break;
+                case 2:
+                    System.out.println("2");
+                    break;
+                case 3:
+                    System.out.println("3");
+                    break;
+                case 4:
+                    System.out.println("4");
+                    break;
+                default:
+                    System.out.println("Digite um valor válido!!");
+            }
+
         }
 
     }
-
 }
