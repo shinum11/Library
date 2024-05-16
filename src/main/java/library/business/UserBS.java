@@ -20,8 +20,8 @@ public class UserBS {
         if(user.getCpf() == null || user.getCpf().equals(""))
         {
             throw new Exception("O campo CPF é obrigatório!!");
-        } else if (user.getCpf() < 0 || user.getCpf().toString().length() > 11 )  {
-            throw new Exception("O CPF informado é invalido!!");
+        } else if (user.getCpf().toString().length() != 11 )  {
+            throw new Exception("O CPF tem que ter 11 Digitos!!");
         }
 
         if(user.getAddress() == null || user.getAddress().equals(""))

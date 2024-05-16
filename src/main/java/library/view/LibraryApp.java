@@ -28,14 +28,20 @@ public class LibraryApp {
 
             escolha = ler.nextInt();
 
+
             switch (escolha) {
                 case 0:
                     flag = false;
                     break;
                 case 1:
                     try {
-                        System.out.println("\nDigite o nome do Usuário: ");
-                        String nome = ler.next();
+
+                        System.out.println("\nDigite o primeiro nome do Usuário: ");
+                        String nome1 = ler.next();
+
+                        System.out.println("\nDigite o sobrenome nome do Usuário: ");
+                        String nome2 = ler.next();
+                        String nome = nome1 + " " + nome2;
 
                         System.out.println("\nDigite o e-mail do Usuário: ");
                         String email = ler.next();
@@ -55,12 +61,13 @@ public class LibraryApp {
                         userBS.adicionarUser(user);
 
                         JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
+
                     }
 
                     catch (Exception e){
                         JOptionPane.showMessageDialog(null,e.getMessage());
                     }
-
+                    ler.close();
                     break;
                 case 2:
                     System.out.println("2");
