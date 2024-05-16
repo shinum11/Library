@@ -7,6 +7,7 @@ package library.view;
 import library.business.UserBS;
 import library.model.User;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 /**
@@ -32,24 +33,33 @@ public class LibraryApp {
                     flag = false;
                     break;
                 case 1:
-                    System.out.println("\nDigite o nome do Usuário: ");
-                    String nome = ler.next();
+                    try {
+                        System.out.println("\nDigite o nome do Usuário: ");
+                        String nome = ler.next();
 
-                    System.out.println("\nDigite o e-mail do Usuário: ");
-                    String email = ler.next();
+                        System.out.println("\nDigite o e-mail do Usuário: ");
+                        String email = ler.next();
 
-                    System.out.println("\nDigite o CPF do Usuário: ");
-                    long cpf = ler.nextLong();
+                        System.out.println("\nDigite o CPF do Usuário: ");
+                        long cpf = ler.nextLong();
 
-                    System.out.println("\nDigite o endereço do Usuário: ");
-                    String endereco = ler.next();
+                        System.out.println("\nDigite o endereço do Usuário: ");
+                        String endereco = ler.next();
 
-                    System.out.println("\nDigite o número do Usuário: ");
-                    String numero = ler.next();
+                        System.out.println("\nDigite o número do Usuário: ");
+                        String numero = ler.next();
 
-                    User user = new User(nome, email, cpf,endereco,numero);
+                        User user = new User(nome, email, cpf, endereco, numero);
 
-                    UserBS userBS;
+                        UserBS userBS = new UserBS();
+                        userBS.adicionarUser(user);
+
+                        JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
+                    }
+
+                    catch (Exception e){
+                        JOptionPane.showMessageDialog(null,e.getMessage());
+                    }
 
                     break;
                 case 2:
