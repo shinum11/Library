@@ -1,10 +1,10 @@
-package com.mycompany.library;
+package library.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Conect {
+public class Connect {
     public static void main(String[] args) {
 
         try {
@@ -22,6 +22,16 @@ public class Conect {
         } catch (SQLException sqle) {
             System.out.println("Erro na conexão: " +
                     sqle.getMessage());
+        }
+
+
+
+        try {
+            con.close();
+            System.out.println("Conexão finalizada");
+
+        }catch (SQLException sqle ){
+            System.out.println("Erro na finalização do banco de dados: " + sqle);
         }
     }
 }

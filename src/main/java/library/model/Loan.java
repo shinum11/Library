@@ -1,5 +1,5 @@
 
-package com.mycompany.library;
+package library.model;
 
 import java.time.LocalDateTime;
 
