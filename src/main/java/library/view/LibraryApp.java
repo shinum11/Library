@@ -61,7 +61,6 @@ public class LibraryApp {
                         userBS.adicionarUser(user);
 
                         JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
-
                     }
 
                     catch (Exception e){
@@ -69,6 +68,7 @@ public class LibraryApp {
                     }
                     ler.close();
                     break;
+
                 case 2:
                     System.out.println("2");
                     break;

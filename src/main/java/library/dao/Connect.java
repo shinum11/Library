@@ -2,6 +2,7 @@ package library.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Connect {
@@ -17,10 +18,10 @@ public class Connect {
                         cnfe.getMessage());
             }
 
-            Connection con = null;
             try {
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Library", "root", "Pmfm1234.");
                 System.out.println("Conexão estabelecida!!");
+                PreparedStatement ps = null;
             } catch (SQLException sqle) {
                 System.out.println("Erro na conexão: " +
                         sqle.getMessage());

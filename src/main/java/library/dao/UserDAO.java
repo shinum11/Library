@@ -12,7 +12,7 @@ public class UserDAO extends Connect {
 
        this.connect();
 
-        /*PreparedStatement ps = null;
+        PreparedStatement ps = null;
         String sql = "insert into user values (?,?,?,?,?)";
 
         try {
@@ -28,7 +28,7 @@ public class UserDAO extends Connect {
             System.out.println("Pronto para executar comandos SQL");
         } catch (SQLException sqle){
             System.out.println("Erro no acesso ao Bano de Dados: " + sqle.getMessage());
-        }*/
+        }
 
         this.disconnect();
 
