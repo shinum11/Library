@@ -30,7 +30,7 @@ public class UserDAO extends Connect {
             System.out.println("Erro no acesso ao Bano de Dados: " + sqle.getMessage());
         }*/
 
-        this.disconect();
+        this.disconnect();
 
 
 
