@@ -28,6 +28,9 @@ public class LibraryApp {
 
             escolha = ler.nextInt();
 
+            /*Limpa o buffer*/
+            ler.nextLine();
+
 
             switch (escolha) {
                 case 0:
@@ -36,24 +39,21 @@ public class LibraryApp {
                 case 1:
                     try {
 
-                        System.out.println("\nDigite o primeiro nome do Usuário: ");
-                        String nome1 = ler.next();
-
-                        System.out.println("\nDigite o sobrenome nome do Usuário: ");
-                        String nome2 = ler.next();
-                        String nome = nome1 + " " + nome2;
+                        System.out.println("\nDigite o nome do Usuário: ");
+                        String nome = ler.nextLine();
 
                         System.out.println("\nDigite o e-mail do Usuário: ");
-                        String email = ler.next();
+                        String email = ler.nextLine();
 
                         System.out.println("\nDigite o CPF do Usuário: ");
                         long cpf = ler.nextLong();
+                        ler.nextLine();
 
                         System.out.println("\nDigite o endereço do Usuário: ");
-                        String endereco = ler.next();
+                        String endereco = ler.nextLine();
 
                         System.out.println("\nDigite o número do Usuário: ");
-                        String numero = ler.next();
+                        String numero = ler.nextLine();
 
                         User user = new User(nome, email, cpf, endereco, numero);
 

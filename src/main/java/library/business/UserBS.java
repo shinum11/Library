@@ -42,7 +42,7 @@ public class UserBS {
 
     public void adicionarUser(User user) throws Exception
     {
-        validarDados(user);
+        /*validarDados(user);*/
         userDAO.adicionar(user);
     }
 }

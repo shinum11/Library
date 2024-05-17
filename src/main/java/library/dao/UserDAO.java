@@ -7,27 +7,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class UserDAO {
+public class UserDAO extends Connect {
     public void adicionar(User user){
 
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            System.out.println("Driver JDBC carregado");
-        } catch (ClassNotFoundException cnfe) {
-            System.out.println("Driver JDBC não encontrado : " +
-                    cnfe.getMessage());
-        }
+       this.connect();
 
-        Connection con = null;
-        try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Library", "root", "Pmfm1234.");
-            System.out.println("Conexão estabelecida!!");
-        } catch (SQLException sqle) {
-            System.out.println("Erro na conexão: " +
-                    sqle.getMessage());
-        }
-
-        PreparedStatement ps = null;
+        /*PreparedStatement ps = null;
         String sql = "insert into user values (?,?,?,?,?)";
 
         try {
@@ -43,16 +28,11 @@ public class UserDAO {
             System.out.println("Pronto para executar comandos SQL");
         } catch (SQLException sqle){
             System.out.println("Erro no acesso ao Bano de Dados: " + sqle.getMessage());
-        }
+        }*/
+
+        this.disconect();
 
 
-        try {
-            con.close();
-            System.out.println("Conexão finalizada");
-
-        }catch (SQLException sqle ){
-            System.out.println("Erro na finalização do banco de dados: " + sqle);
-        }
 
     }
 }
