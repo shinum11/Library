@@ -16,7 +16,6 @@ public class UserBS {
         {
             throw new Exception("O campo nome é obrigatório!!");
         }
-
         if(user.getCpf() == null || user.getCpf().equals(""))
         {
             throw new Exception("O campo CPF é obrigatório!!");
@@ -42,7 +41,7 @@ public class UserBS {
 
     public void adicionarUser(User user) throws Exception
     {
-        /*validarDados(user);*/
+        validarDados(user);
         userDAO.adicionar(user);
     }
 }

@@ -66,7 +66,7 @@ public class LibraryApp {
                     catch (Exception e){
                         JOptionPane.showMessageDialog(null,e.getMessage());
                     }
-                    ler.close();
+
                     break;
 
                 case 2:

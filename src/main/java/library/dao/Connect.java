@@ -8,8 +8,9 @@ import java.sql.SQLException;
 public class Connect {
 
         Connection con;
+        PreparedStatement ps = null;
 
-        public void connect(){
+        public void connect(String sql) throws SQLException {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 System.out.println("Driver JDBC carregado");
@@ -21,7 +22,8 @@ public class Connect {
             try {
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Library", "root", "Pmfm1234.");
                 System.out.println("Conexão estabelecida!!");
-                PreparedStatement ps = null;
+                ps = con.prepareStatement(sql);
+
             } catch (SQLException sqle) {
                 System.out.println("Erro na conexão: " +
                         sqle.getMessage());
