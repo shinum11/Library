@@ -10,8 +10,8 @@ import javax.management.InvalidAttributeValueException;
 public class Book {
     
     private String title;
-    private String gender;
-    private int ibsn;
+    private String genre;
+    private Long ibsn;
     private String author;
     private int pages;
     private int amount;
@@ -19,20 +19,18 @@ public class Book {
     public Book(
             String title, 
             String gender, 
-            int ibsn, 
+            Long ibsn,
             String author, 
             int pages,
             int amount) throws Exception 
     {
         this.title = title;
-        this.gender = gender;
+        this.genre = gender;
         this.ibsn = ibsn;
         this.author = author;
         this.pages = pages;
-        if(amount > 0)
-            this.amount = amount;
-        else
-            throw new Exception("Valor invalido");
+        this.amount = amount;
+
     }
     
     public String getTitle() {
@@ -43,19 +41,19 @@ public class Book {
         this.title = title;
     }
 
-    public String getGender() {
-        return gender;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public int getIbsn() {
+    public Long getIbsn() {
         return ibsn;
     }
 
-    public void setIbsn(int ibsn) {
+    public void setIbsn(Long ibsn) {
         this.ibsn = ibsn;
     }
 
