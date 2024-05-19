@@ -8,7 +8,7 @@ public class BookBS {
 
     public BookBS() {bookDAO = new BookDAO();}
 
-    private void validardados(Book book) throws Exception {
+    private void validarDados(Book book) throws Exception {
         if (book.getTitle() == null || book.getTitle().equals(""))
         {
             throw new Exception("Campo titulo obrigatório!!");
@@ -35,5 +35,11 @@ public class BookBS {
         {
             throw new Exception("A quantidade não pode ser menor que zero!!");
         }
+    }
+
+    public void adicionar(Book book) throws Exception
+    {
+        validarDados(book);
+        bookDAO.adicionar(book);
     }
 }

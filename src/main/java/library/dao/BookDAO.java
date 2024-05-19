@@ -6,7 +6,8 @@ import java.sql.SQLException;
 
 public class BookDAO extends Connect {
 
-    public void adicionar(Book book) throws SQLException {
+    public void adicionar(Book book) throws SQLException
+    {
         String sql = "insert into book values(?,?,?,?,?,?,?)";
 
         this.connect(sql);

@@ -9,7 +9,8 @@ import java.sql.SQLException;
 
 public class UserDAO extends Connect {
 
-    public void adicionar(User user) throws SQLException {
+    public void adicionar(User user) throws SQLException
+    {
         String sql = "insert into user values (?,?,?,?,?)";
 
         this.connect(sql);
