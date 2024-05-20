@@ -5,6 +5,9 @@
 package library.view;
 
 import library.business.UserBS;
+import library.dao.LoanDAO;
+import library.model.Book;
+import library.model.Loan;
 import library.model.User;
 
 import javax.swing.*;
@@ -16,7 +19,7 @@ import java.util.Scanner;
  */
 public class LibraryApp {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Boolean flag = true;
 
         while (flag) {
@@ -73,7 +76,18 @@ public class LibraryApp {
 
                     break;
                 case 3:
-                    System.out.println("3");
+                    User user = new User("José","asfasfas", 56565L,"asfasfas","asfasfasf");
+                    Book book = new Book("O nome do vento","Romance",5454545L,"Patrick Rhuphus",720,6);
+
+                    Loan loan = new Loan(user,book);
+                    LoanDAO loanDao;
+                    loanDao = new LoanDAO();
+
+                    loanDao.adicionar(loan);
+
+                    JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
+
+
                     break;
                 case 4:
                     System.out.println("4");

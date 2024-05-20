@@ -1,6 +1,7 @@
 
 package library.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
@@ -10,9 +11,9 @@ import java.time.LocalDateTime;
 public class Loan {
     private User user;
     private Book book;
-    private LocalDateTime data_emprestimo;
-    private LocalDateTime data_devolvido;
-    private LocalDateTime data_estimada;
+    private LocalDate data_emprestimo;
+    private LocalDate data_devolvido;
+    private LocalDate data_estimada;
     private int renews = 0;
     private int fine = 50;
 
@@ -22,7 +23,7 @@ public class Loan {
     {
         this.user = user;
         this.book = book;
-        this.data_emprestimo = LocalDateTime.now();
+        this.data_emprestimo = LocalDate.now();
         this.data_devolvido = null;
         this.data_estimada = this.data_emprestimo.plusDays(7);
     }
@@ -35,27 +36,27 @@ public class Loan {
         return book;
     }
 
-    public LocalDateTime getData_emprestimo() {
+    public LocalDate getData_emprestimo() {
         return data_emprestimo;
     }
 
-    public void setData_emprestimo(LocalDateTime data_emprestimo) {
+    public void setData_emprestimo(LocalDate data_emprestimo) {
         this.data_emprestimo = data_emprestimo;
     }
 
-    public LocalDateTime getData_devolvido() {
+    public LocalDate getData_devolvido() {
         return data_devolvido;
     }
 
-    public void setData_devolvido(LocalDateTime data_devolvido) {
+    public void setData_devolvido(LocalDate data_devolvido) {
         this.data_devolvido = data_devolvido;
     }
 
-    public LocalDateTime getData_estimada() {
+    public LocalDate getData_estimada() {
         return data_estimada;
     }
 
-    public void setData_estimada(LocalDateTime data_estimada) {
+    public void setData_estimada(LocalDate data_estimada) {
         this.data_estimada = data_estimada;
     }
     
@@ -69,7 +70,7 @@ public class Loan {
     }
     
     public void return_book(){
-        this.data_devolvido = LocalDateTime.now();
+        this.data_devolvido = LocalDate.now();
         if(this.data_devolvido.isAfter(this.data_estimada))
             fine();
         this.book.retornar();
