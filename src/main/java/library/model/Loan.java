@@ -9,32 +9,26 @@ import java.time.LocalDateTime;
  * @author sidneigoes
  */
 public class Loan {
-    private User user;
-    private Book book;
+    private Long cpf;
+    private Long ibsn;;
     private LocalDate data_emprestimo;
     private LocalDate data_devolvido;
     private LocalDate data_estimada;
     private int renews = 0;
     private int fine = 50;
 
-    public Loan(
-            User user,
-            Book book)
+    public Loan(Long cpf, Long ibsn)
     {
-        this.user = user;
-        this.book = book;
+        this.cpf = cpf;
+        this.ibsn = ibsn;
         this.data_emprestimo = LocalDate.now();
         this.data_devolvido = null;
         this.data_estimada = this.data_emprestimo.plusDays(7);
     }
 
-    public User getUser() {
-        return user;
-    }
+    public Long getCpf() {return cpf;}
 
-    public Book getBook() {
-        return book;
-    }
+    public Long getIbsn() {return ibsn;}
 
     public LocalDate getData_emprestimo() {
         return data_emprestimo;
@@ -61,19 +55,18 @@ public class Loan {
     }
     
     public void renew(){
-        if (this.renews < 3){
+        //Essa função tem que ir para o Business
+       /* if (this.renews < 3){
             this.renews += 1;
             this.data_estimada.plusDays(7);
         }
         else
-            System.out.println("O Usuário excedeu seu limite de renovações");
+            System.out.println("O Usuário excedeu seu limite de renovações");*/
     }
     
     public void return_book(){
-        this.data_devolvido = LocalDate.now();
-        if(this.data_devolvido.isAfter(this.data_estimada))
-            fine();
-        this.book.retornar();
+       //Essa função tem que ir para o Business
     }
-    public void fine(){System.out.println("Emprestimo atrasado, necessario cobrar " + fine + " de multa");}
+    public void fine(){// Essa função tem que ir para o Business
+        /*System.out.println("Emprestimo atrasado, necessario cobrar " + fine + " de multa");*/}
 }

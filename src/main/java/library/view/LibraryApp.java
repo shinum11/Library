@@ -11,6 +11,8 @@ import library.model.Loan;
 import library.model.User;
 
 import javax.swing.*;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 /**
@@ -22,6 +24,9 @@ public class LibraryApp {
     public static void main(String[] args) throws Exception {
         Boolean flag = true;
 
+
+        Date data = Date.valueOf(LocalDate.now());
+        System.out.println(data);
         while (flag) {
             Scanner ler = new Scanner(System.in);
             System.out.println("Escolha uma das opções:\n1 - Cadrastrar Usuário\n2 - Cadastrar Livro\n3 - Emprestar" +
@@ -76,16 +81,14 @@ public class LibraryApp {
 
                     break;
                 case 3:
-                    User user = new User("José","asfasfas", 56565L,"asfasfas","asfasfasf");
-                    Book book = new Book("O nome do vento","Romance",5454545L,"Patrick Rhuphus",720,6);
 
-                    Loan loan = new Loan(user,book);
+                    /*Loan loan = new Loan();
                     LoanDAO loanDao;
                     loanDao = new LoanDAO();
 
                     loanDao.adicionar(loan);
 
-                    JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
+                    JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");*/
 
 
                     break;

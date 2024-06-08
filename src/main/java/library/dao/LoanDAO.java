@@ -15,16 +15,12 @@ public class LoanDAO extends Connect{
         String sql = "insert into user values (?,?,?,?,?)";
 
         this.connect(sql);
-        Date data_emp = Date.valueOf(loan.getData_emprestimo());
-        Date data_dev = Date.valueOf(loan.getData_devolvido());
-        Date data_est = Date.valueOf(loan.getData_estimada());
-        
 
-        ps.setObject(1,loan.getUser());
-        ps.setObject(2,loan.getBook());
-        ps.setDate(3,data_emp);
-        ps.setDate(4,data_dev);
-        ps.setDate(5,data_est);
+        ps.setLong(1, loan.getCpf());
+        ps.setLong(2,loan.getIbsn());
+        ps.setDate(3, Date.valueOf(LocalDate.now()));
+
+
 
         ps.executeUpdate();
 
